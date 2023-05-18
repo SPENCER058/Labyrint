@@ -10,9 +10,10 @@ GameObject:
   m_Component:
   - component: {fileID: 4621302565435805562}
   - component: {fileID: 1086109723605896799}
+  - component: {fileID: 4233707986972006893}
   m_Layer: 0
   m_Name: Coin
-  m_TagString: Untagged
+  m_TagString: Coin
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -47,6 +48,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   visual: {fileID: 4621302566142023228}
   coinData: {fileID: 0}
+  baseAnimation: {fileID: 0}
+--- !u!136 &4233707986972006893
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4621302565435805563}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.5
+  m_Height: 1
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &4621302566142023216
 GameObject:
   m_ObjectHideFlags: 0
@@ -58,7 +74,6 @@ GameObject:
   - component: {fileID: 4621302566142023228}
   - component: {fileID: 4621302566142023229}
   - component: {fileID: 4621302566142023218}
-  - component: {fileID: 4621302566142023219}
   m_Layer: 0
   m_Name: Cylinder
   m_TagString: Untagged
@@ -131,17 +146,3 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!136 &4621302566142023219
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4621302566142023216}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: 0.5000001
-  m_Height: 2
-  m_Direction: 1
-  m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940697}
