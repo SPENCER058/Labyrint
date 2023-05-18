@@ -8,6 +8,6 @@ public class AnimationScale : BaseAnimation
 	public override void Animate (Transform visual) {
 		base.Animate(visual);
 
-		visual.parent.DOScale(1.1f, base.duration).SetLoops(-1, LoopType.Yoyo);
+		visual.parent.DOScale(2f, base.duration).SetLoops(-1, LoopType.Yoyo);
 	}
 }

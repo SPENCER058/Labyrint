@@ -3,10 +3,13 @@ using UnityEngine;
 public class GravityController : MonoBehaviour
 {
 	[SerializeField] float acceleration = 9 * 8f;
-	Vector3 gravityOffset;
+	
+	Quaternion gravityOffset = Quaternion.identity;
+	
 	bool isActive = true;
 
 	private void Start () {
+
 		if (SystemInfo.supportsGyroscope) {
 			Input.gyro.enabled = true;
 		}
@@ -15,16 +18,14 @@ public class GravityController : MonoBehaviour
 	private void Update () {
 		
 		if (isActive) {
-			Physics.gravity = GetGravityFromSensor() + gravityOffset;
+			Physics.gravity = gravityOffset * GetGravityFromSensor();
 		} else {
 			Physics.gravity = Vector3.zero;
 		}
-
-		Physics.gravity = GetGravityFromSensor() + gravityOffset;
 	}
 
 	public void CallibrateGravity () {
-		gravityOffset = Vector3.down * acceleration - GetGravityFromSensor();
+		gravityOffset = Quaternion.FromToRotation(GetGravityFromSensor(), Vector3.down * acceleration);
 	}
 
 	private Vector3 GetGravityFromSensor () {
