@@ -8,4 +8,7 @@ public class CoinData : ScriptableObject
 
 	public Material material;
 
+	public int GetValue() {
+		return value;
+	}
 }
