@@ -15,4 +15,8 @@ public class Coin : MonoBehaviour
 			baseAnimation.Animate(visual);
 		}
 	}
+
+	public int GetCoinValue () {
+		return coinData.value;
+	}
 }

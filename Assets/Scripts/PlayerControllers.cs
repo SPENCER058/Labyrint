@@ -16,7 +16,8 @@ public class PlayerControllers : MonoBehaviour
 	private void OnCollisionEnter (Collision collision) {
 		if (collision.gameObject.CompareTag("Coin")) {
 			collision.gameObject.SetActive(false);
-			score++;
+			int scoreGet = collision.gameObject.GetComponentInChildren<Coin>().GetCoinValue();
+			score = score + scoreGet;
 			AddScore.Invoke(score);
 		}
 	}

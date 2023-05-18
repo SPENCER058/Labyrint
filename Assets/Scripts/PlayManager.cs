@@ -62,9 +62,9 @@ public class PlayManager : MonoBehaviour
 		playerControllers.AddScore -= UpdateScore;
 	}
 
-	private void UpdateScore (int obj) {
-		scoreText.text = $"Score : {obj.ToString()}";
-		coin++;
+	private void UpdateScore (int score) {
+		coin += score;
+		scoreText.text = $"Score : {score.ToString()}";
 	}
 
 	public void GameOver () {
